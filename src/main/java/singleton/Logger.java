@@ -2,7 +2,7 @@ package singleton;
 
 public class Logger {
 
-    private  Logger logger ;
+    private  static Logger logger ;
 
     private Logger()
     {
@@ -10,7 +10,7 @@ public class Logger {
     }
 
 
-    public Logger getInstance()
+    public static Logger getInstance()
     {
         if(logger == null)
         {
