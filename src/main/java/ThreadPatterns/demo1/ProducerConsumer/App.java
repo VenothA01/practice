@@ -1,7 +1,7 @@
 package ThreadPatterns.demo1.ProducerConsumer;
 
 import sun.awt.windows.ThemeReader;
-import static org.ju
+
 
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
