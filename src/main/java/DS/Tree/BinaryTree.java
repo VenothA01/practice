@@ -11,7 +11,7 @@ class Node
     public Node(int key)
     {
         this.key =  key;
-        left = right = null;
+            left = right = null;
     }
 }
 
@@ -39,6 +39,58 @@ public class BinaryTree {
         System.out.print(temp.key+"->");
         inorderTraversal(temp.right);
     }
+
+    static void preOrderTraversal(Node temp)
+    {
+        if(temp == null)
+        {
+            return;
+        }
+
+        System.out.print(temp.key+"->");
+        preOrderTraversal(temp.left);
+        preOrderTraversal(temp.right);
+    }
+
+    static void postrderTraversal(Node temp)
+    {
+        if(temp == null)
+        {
+            return;
+        }
+
+
+        postrderTraversal(temp.left);
+        postrderTraversal(temp.right);
+        System.out.print(temp.key+"->");
+    }
+
+
+    static void levelOrderTraversal(Node temp){
+
+
+    }
+
+
+    static int height(Node root){
+
+        if(root==null){ return 0; }
+        else{
+            int lHeight = height(root.left);
+            int rHeight = height(root.right);
+
+            if(lHeight>rHeight){
+                return (lHeight+1);
+            }
+        }
+
+        return 1;
+    }
+
+
+
+
+
 
     static void insert(Node temp,int key)
     {
@@ -73,27 +125,18 @@ public class BinaryTree {
 
     public static void main(String args[])
     {
-        root = new Node(10);
-        root.left = new Node(11);
-        root.left.left = new Node(7);
-        root.left.right = new Node(12);
-        root.right = new Node(9);
-        root.right.left = new Node(15);
-        root.right.right = new Node(8);
+        root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
 
 
-
-        /**
-
-                        1
-                    2     3
-                4
-         **/
-
-
-        System.out.println("Tree Before deletion");
         inorderTraversal(root);
-
+        System.out.println("=======");
+        preOrderTraversal(root);
+        System.out.println("=======");
+        postrderTraversal(root);
 
 
         }
